@@ -1,0 +1,115 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #2c0e37 0%, #5d1a48 100%); /* Warna Anggur Gelap */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    width: 100%;
+    max-width: 700px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+header { text-align: center; margin-bottom: 30px; }
+h1 { color: #5d1a48; font-weight: 700; margin-bottom: 5px; }
+p { color: #666; font-size: 0.9rem; }
+
+/* Grid Layout untuk Form (2 Kolom) */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Membagi 2 kolom sama besar */
+    gap: 15px;
+}
+
+/* Agar input Alcohol memenuhi lebar bawah */
+.full-width { grid-column: span 2; }
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s;
+    background: #f9f9f9;
+}
+
+input:focus {
+    border-color: #764ba2;
+    background: #fff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.1);
+}
+
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+}
+
+button:active { transform: translateY(0); }
+
+/* Styling Hasil */
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s ease;
+}
+
+.result.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.success { background: #e0f2f1; border: 1px solid #b2dfdb; color: #00695c; }
+.error { background: #ffebee; border: 1px solid #ffcdd2; color: #c62828; }
+
+.quality-score { font-size: 3rem; font-weight: 800; color: #5d1a48; display: block; margin: 10px 0; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsif untuk HP */
+@media (max-width: 500px) {
+    .form-grid { grid-template-columns: 1fr; } /* Jadi 1 kolom di HP */
+    .full-width { grid-column: span 1; }
+    .container { padding: 25px; }
+}
