@@ -1,7 +1,7 @@
 // GANTI URL INI DENGAN ALAMAT API KAMU YANG ASLI
 // Contoh kalau VPS: "http://123.456.78.90/predict"
 // Contoh kalau Railway/Render: "https://nama-app.up.railway.app/predict"
-const API_URL = "https://ayakasenpai99-wine-prediction.hf.space"; 
+const API_URL = "https://ayakasenpai99-wine-prediction.hf.space/predict";
 
 document.getElementById("wineForm").addEventListener("submit", async function(e) {
     e.preventDefault();
